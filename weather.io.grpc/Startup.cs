@@ -32,6 +32,7 @@ namespace weather.io.grpc
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<WeatherService>();
 
                 endpoints.MapGet("/", async context =>
                 {

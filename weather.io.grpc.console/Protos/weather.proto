@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "weather.io.grpc.console";
+
+package Weather;
+
+service Weather {
+  rpc GetWeather (WeatherRequest) returns (WeatherReply);
+}
+
+message WeatherRequest {
+  string name = 1;
+}
+
+message WeatherReply {
+    string greet=1;
+    repeated WeatherForecast items = 2;
+}
+message WeatherForecast {
+
+    string date=1;
+    int32 temperatureC=2;
+    int32 temperatureF=3;
+    string summary=4;
+}
