@@ -14,6 +14,7 @@ namespace weather.io.grpc.Services
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            _logger.LogInformation("SayHello to {0}", request.Name);
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name

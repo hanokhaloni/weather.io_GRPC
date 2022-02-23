@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Grpc.Net.Client;
 
 using System.Configuration;
-using System.Collections.Specialized;
 
 namespace weather.io.grpc.console
 {
@@ -19,35 +17,42 @@ namespace weather.io.grpc.console
                 throw new ArgumentException("Strange - no ServerBaseUrl found. Exiting...");
             }
 
-            // The port number(5001) must match the port of the gRPC server.
-            using var channel = GrpcChannel.ForAddress(serverBaseUrl);
-            var client = new Weather.WeatherClient(channel);
-            var reply = await client.GetWeatherAsync(
-                              new WeatherRequest { Name = "GreeterClient" });
-
-            Console.WriteLine("Weather: " + reply.Greet);
-            foreach (var forecast in reply.Items)
+            if (args.Length == 1)
             {
-                Console.WriteLine("On {0} it will be {1}C / {2}F - {3}"
-                    , forecast.Date
-                    , forecast.TemperatureC
-                    , forecast.TemperatureF
-                    , forecast.Summary);
+                if (args[0].Contains("Greet", StringComparison.OrdinalIgnoreCase))
+                {
+                    await Greet(serverBaseUrl);
+                }
             }
+            await GetWeatherForecast(serverBaseUrl);
+
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
 
-        static async Task Greet(string[] args)
+        private static async Task GetWeatherForecast(string serverBaseUrl)
         {
             // The port number(5001) must match the port of the gRPC server.
-            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            using var channel = GrpcChannel.ForAddress(serverBaseUrl);
+            var client = new Weather.WeatherClient(channel);
+            var reply = await client.GetWeatherAsync(new WeatherRequest { Name = "GreeterClient" });
+
+            Console.WriteLine("Weather: " + reply.Greet);
+            foreach (var forecast in reply.Items)
+            {
+                Console.WriteLine("On {0} it will be {1}C / {2}F - {3}", forecast.Date, forecast.TemperatureC,
+                    forecast.TemperatureF, forecast.Summary);
+            }
+        }
+
+        static async Task Greet(string serverBaseUrl)
+        {
+            // The port number(5001) must match the port of the gRPC server.
+            using var channel = GrpcChannel.ForAddress(serverBaseUrl);
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(
                               new HelloRequest { Name = "GreeterClient" });
             Console.WriteLine("Greeting: " + reply.Message);
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
         }
 
     }

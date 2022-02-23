@@ -21,6 +21,7 @@ namespace weather.io.grpc.Services
 
         public override Task<WeatherReply> GetWeather(WeatherRequest request, ServerCallContext context)
         {
+            _logger.LogInformation("GetWeather to {0}", request.Name);
             var weatherReply = new WeatherReply();
 
             var rng = new Random();
