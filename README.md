@@ -23,11 +23,16 @@ You can only test the connection using the weather.io.grpc.console
  weather.io.grpc.console.exe -s https://localhost:5001
  ```
 
+from docker container running weather.io.grpc.console
+```
+dotnet weather.io.grpc.console.dll -s http://weather.io.grpc:80
+```
+
 # Dev env
 
 Just checkout, build and run.
-1. Debug/x64/weather.io.grpc -> ctrl_f5 
-2. Debug/x64/weather.io.grpc.console -> ctrl_f5 
+1. Debug/Any CPU/weather.io.grpc -> ctrl_f5 
+2. Debug/Any CPU/weather.io.grpc.console -> ctrl_f5 
 
 ## Handle System.InvalidOperationExceprtion : Unable to configure HTTPS endpoint for dev env
 

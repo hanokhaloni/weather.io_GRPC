@@ -28,6 +28,7 @@ namespace weather.io.grpc.console
             {
                 throw new ArgumentException("Strange - no ServerBaseUrl found. Exiting...");
             }
+            Console.WriteLine("Connecting to {0}",ServerBaseUrl);
 
             if (ShouldGreet)
             {
