@@ -1,7 +1,6 @@
 # weather.io_GRPC
-A .net core 5.0 gRPC example 
-# weather.io
-ASP.NET CORE api - weather mock for playing with HTTPS on local IIS, local docker, and remote k8s 
+
+A .net core 5.0 gRPC weather mock for playing with HTTPS on local IIS, local docker, and remote k8s 
 
 ## build & run
 
