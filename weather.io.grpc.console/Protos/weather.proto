@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "weather.io.grpc.console";
+option csharp_namespace = "weather.io.grpc";
 
 package Weather;
 
