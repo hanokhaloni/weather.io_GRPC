@@ -3,17 +3,28 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Grpc.Net.Client;
 
+using System.Configuration;
+using System.Collections.Specialized;
+
 namespace weather.io.grpc.console
 {
     class Program
     {
         static async Task Main(string[] args)
         {
+            var serverBaseUrl = ConfigurationManager.AppSettings.Get("ServerBaseUrl");
+
+            if (String.IsNullOrEmpty(serverBaseUrl))
+            {
+                throw new ArgumentException("Strange - no ServerBaseUrl found. Exiting...");
+            }
+
             // The port number(5001) must match the port of the gRPC server.
-            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            using var channel = GrpcChannel.ForAddress(serverBaseUrl);
             var client = new Weather.WeatherClient(channel);
             var reply = await client.GetWeatherAsync(
                               new WeatherRequest { Name = "GreeterClient" });
+
             Console.WriteLine("Weather: " + reply.Greet);
             foreach (var forecast in reply.Items)
             {

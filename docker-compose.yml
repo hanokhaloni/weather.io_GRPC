@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  weather.io.grpc:
+    image: ${DOCKER_REGISTRY-}weatheriogrpc
+    build:
+      context: .
+      dockerfile: weather.io.grpc/Dockerfile
+
+  weather.io.grpc.console:
+    image: ${DOCKER_REGISTRY-}weatheriogrpcconsole
+    build:
+      context: .
+      dockerfile: weather.io.grpc.console/Dockerfile
+

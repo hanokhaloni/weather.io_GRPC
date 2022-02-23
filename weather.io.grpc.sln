@@ -3,24 +3,44 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weather.io.grpc", "weather.io.grpc\weather.io.grpc.csproj", "{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "weather.io.grpc", "weather.io.grpc\weather.io.grpc.csproj", "{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weather.io.grpc.console", "weather.io.grpc.console\weather.io.grpc.console.csproj", "{2589E9BB-BE40-46B6-A47C-1F533AC56493}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "weather.io.grpc.console", "weather.io.grpc.console\weather.io.grpc.console.csproj", "{2589E9BB-BE40-46B6-A47C-1F533AC56493}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1EECF519-7472-4C2A-9871-FF21C9F184C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Debug|x64.Build.0 = Debug|Any CPU
 		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Release|x64.ActiveCfg = Release|Any CPU
+		{E30FDA7D-16C5-46CE-BF21-49B0C6178DEF}.Release|x64.Build.0 = Release|Any CPU
 		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Debug|x64.ActiveCfg = Debug|x64
+		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Debug|x64.Build.0 = Debug|x64
 		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Release|x64.ActiveCfg = Release|x64
+		{2589E9BB-BE40-46B6-A47C-1F533AC56493}.Release|x64.Build.0 = Release|x64
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Debug|x64.Build.0 = Debug|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Release|x64.ActiveCfg = Release|Any CPU
+		{1EECF519-7472-4C2A-9871-FF21C9F184C3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
